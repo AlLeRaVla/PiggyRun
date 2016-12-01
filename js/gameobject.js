@@ -1,0 +1,6 @@
+// GAME OBJECTS
+
+
+function GameObject() {
+	
+}
