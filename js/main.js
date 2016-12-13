@@ -19,8 +19,21 @@ var game;
 
 window.onload = function() {
 	game = new Game();
-	game.init(document.getElementById("game"));
+
+	pushResources(game);
+	resources.onReady(createObjects);
+
 }
 
+function createObjects() {
 
+	player = new Player();
+	game.init(document.getElementById("game"));	
+}
 
+function pushResources(game) {
+	resources.load([PLAYER_COMMON_RUN, PLAYER_LEFT_RUN, PLAYER_RIGHT_RUN])
+	/*game.addResource(PLAYER_COMMON_RUN);
+	game.addResource(PLAYER_LEFT_RUN);
+	game.addResource(PLAYER_RIGHT_RUN);*/
+}
